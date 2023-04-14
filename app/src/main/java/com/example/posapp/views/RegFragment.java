@@ -54,8 +54,6 @@ public class RegFragment extends Fragment {
         AppDatabase _db = Room.databaseBuilder(this.getContext(),
                 AppDatabase.class, "registered").build();
 
-        //RegItemDao regItemDao = _db.regItemDao();
-
         btnSaveReg.setOnClickListener(v -> {
 
             boolean validateForm = Utility.validate(codeRegTextEdit,itemItemTextEdit,unitRegTextEdit,unitPriceRegTextEdit);
@@ -73,8 +71,6 @@ public class RegFragment extends Fragment {
                         }, throwable -> {
                             Toast.makeText(this.getContext(), "failed", Toast.LENGTH_SHORT).show();
                         });
-                //RegisterItem registerItem = new RegisterItem();
-                //registerItem.insertAll();
             } else {
                 Toast.makeText(this.getContext(),"Invalid input",Toast.LENGTH_SHORT).show();
             }
