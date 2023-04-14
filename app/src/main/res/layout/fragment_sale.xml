@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="2dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow>
+
+
+            <EditText
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
+                android:ems="10" />
+
+            <EditText
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
+                android:ems="10" />
+
+            <EditText
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
+                android:ems="10" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="5dp"
+            android:minHeight="50dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_layout9"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="0.2"
+                android:hint="Code:"
+                android:weightSum="0.3">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/codesalegid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:minWidth="50dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/searchsaleid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="0.3"
+                android:text="search" />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="5dp"
+            android:minHeight="50dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/regItem"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="9"
+                            android:hint="item"
+                            android:padding="8dp"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/itemUnit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="49"
+                            android:hint="unit"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="1dp"
+                            android:text="" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/itemUnitPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="unit price"
+                        android:padding="8dp" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="5dp"
+            android:minHeight="50dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_layout3"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="0.3"
+                android:hint="Quantity:">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/quantitysaleid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/addsaleid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="5dp"
+
+                android:text="add" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="5dp"
+            android:minHeight="50dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="0.3"
+                android:hint="Total:">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/totalsaleid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="0.3"
+                android:hint="TAX(15%):">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/taxsaleid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="0.3"
+                android:hint="Payable:">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/paysaleid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/myrect"
+        android:orientation="horizontal"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/paidsaleid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_cards"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/resetsaleid"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="5dp"
+        android:text="reset"
+        app:layout_constraintBottom_toBottomOf="parent"
+   />
+
+    <Button
+        android:id="@+id/paidsaleid"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="10dp"
+        android:text="paid"
+        app:layout_constraintBottom_toTopOf="@+id/resetsaleid"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:layout_editor_absoluteX="5dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
