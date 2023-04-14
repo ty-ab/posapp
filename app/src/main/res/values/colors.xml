@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="my_color">#42000000</color>
     <color name="my_color_dark">#42DFD1D1</color>
+    <color name="my_color_border_dark_gray">#333333</color>
+    <color name="my_color_border_light_gray">#979797</color>
 </resources>
