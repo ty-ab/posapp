@@ -131,6 +131,7 @@ public class SaleFragment extends Fragment {
         CardAdapter adapter = new CardAdapter(regCardList);
         mRecyclerView.setAdapter(adapter);
 
+        SalesSummary salesSummary = new SalesSummary(0,0,0,0);
 
         btnAddSale.setOnClickListener(v -> {
 
@@ -144,7 +145,14 @@ public class SaleFragment extends Fragment {
 
                 adapter.notifyItemInserted(regCardList.size() - 1); // notify adapter about the new item
 
+                salesSummary.upTotal(quantity);
+                salesSummary.upTCost(cost);
+                salesSummary.upTax(cost * 0.15d);
+                salesSummary.setPayable(salesSummary.gettCost() + salesSummary.getTax());
 
+                totalSaleTextEdit.setText(String.format("%s", salesSummary.getTotal()));
+                taxSale.setText(String.format("%s", salesSummary.getTax()));
+                payableSaleTextEdit.setText(String.format("%s", salesSummary.getPayable()));
 //                    Completable completable = db.regItemDao().updateItems(cardList);
 //                    completable.subscribeOn(Schedulers.io())
 //                            .observeOn(AndroidSchedulers.mainThread())
@@ -164,7 +172,31 @@ public class SaleFragment extends Fragment {
         });
 
         btnPaidSale.setOnClickListener(v -> {
+            if (salesSummary.getTotal() != 0){
+                salesSummary.setTransactionDate(new Date());
+                Completable completable = db1.salesSummaryDao().insert(salesSummary);
+                completable.subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread()).subscribe(() -> {
 
+                            Utility.clear(codeSaleTextEdit,totalSaleTextEdit,payableSaleTextEdit,taxSale,quantitySaleTextEdit);
+                            Utility.clear(regItemTextView,itemUnitTextView,itemUnitPrice );
+
+                            salesSummary.setTotal(0);
+                            salesSummary.setTax(0);
+                            salesSummary.upPayable(0);
+                            salesSummary.settCost(0);
+
+                            registerItem.set(new RegisterItem(null,null,null,0));
+
+                            regCardList.clear();
+                            adapter.notifyDataSetChanged();
+                            Utility.makeToast(this.getContext(),"paid");
+                        }, throwable -> {
+                            Utility.makeToast(this.getContext(),"failed");
+                        });
+            }else {
+                Utility.makeToast(this.getContext(),"please add items");
+            }
 
         });
 
@@ -172,6 +204,10 @@ public class SaleFragment extends Fragment {
             Utility.clear(codeSaleTextEdit,totalSaleTextEdit,payableSaleTextEdit,taxSale,quantitySaleTextEdit);
             Utility.clear(regItemTextView,itemUnitTextView,itemUnitPrice );
 
+            salesSummary.setTotal(0);
+            salesSummary.setTax(0);
+            salesSummary.upPayable(0);
+            salesSummary.settCost(0);
 
             registerItem.set(null);
             registerItem.set(new RegisterItem(null,null,null,0));
