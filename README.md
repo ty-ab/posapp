@@ -8,3 +8,10 @@
   - Mikiyas Yeshitla------------1810/12  
   - Aron Tadesse----------------1369/12               
   - Abera Assefa-----------------1697/12
+
+
+### about the app
+  - minSdk 28
+  - targetSdk 33
+  - versionCode 1
+  - versionName "1.0"
