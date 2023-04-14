@@ -1,6 +1,5 @@
 # POS Machine app
 ## Assessment 3: App Development Project – 3
-### group 7
 ### Course: CoSc4083 – Mobile Application Development
 
 - ## Group 7 Members
