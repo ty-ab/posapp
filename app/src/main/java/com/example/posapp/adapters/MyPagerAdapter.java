@@ -1,4 +1,4 @@
-package com.example.posapp.utility;
+package com.example.posapp.adapters;
 
 
 import androidx.annotation.NonNull;

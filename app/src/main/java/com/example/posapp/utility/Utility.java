@@ -1,4 +1,4 @@
-package com.example.posmachineapp.utility;
+package com.example.posapp.utility;
 
 import android.content.Context;
 import android.widget.TextView;
@@ -6,12 +6,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.example.posmachineapp.db.RegisterItem;
-import com.example.posmachineapp.db.SalesSummary;
+
 import com.google.android.material.textfield.TextInputEditText;
 
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Objects;
 
 public class Utility {

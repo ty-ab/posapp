@@ -15,6 +15,7 @@ import androidx.room.Room;
 import com.example.posapp.databinding.FragmentRegBinding;
 import com.example.posapp.db.AppDatabase;
 import com.example.posapp.db.RegisterItem;
+import com.example.posapp.utility.Utility;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
@@ -57,6 +58,8 @@ public class RegFragment extends Fragment {
 
         btnSaveReg.setOnClickListener(v -> {
 
+            boolean validateForm = Utility.validate(codeRegTextEdit,itemItemTextEdit,unitRegTextEdit,unitPriceRegTextEdit);
+            if (validateForm) {
                 String code = codeRegTextEdit.getText().toString();
                 String _item = itemItemTextEdit.getText().toString();
                 String unit = unitRegTextEdit.getText().toString();
@@ -66,17 +69,21 @@ public class RegFragment extends Fragment {
                 completable.subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread()).subscribe(() -> {
                             Toast.makeText(this.getContext(), "item saved", Toast.LENGTH_SHORT).show();
+                            Utility.clear(codeRegTextEdit,itemItemTextEdit,unitRegTextEdit,unitPriceRegTextEdit);
                         }, throwable -> {
                             Toast.makeText(this.getContext(), "failed", Toast.LENGTH_SHORT).show();
                         });
                 //RegisterItem registerItem = new RegisterItem();
                 //registerItem.insertAll();
-
+            } else {
+                Toast.makeText(this.getContext(),"Invalid input",Toast.LENGTH_SHORT).show();
+            }
 
         });
 
         btnResetReg.setOnClickListener(v -> {
             Toast.makeText(this.getContext(), "Clear Button Clicked", Toast.LENGTH_SHORT).show();
+            Utility.clear(codeRegTextEdit,itemItemTextEdit,unitRegTextEdit,unitPriceRegTextEdit);
         });
 
 

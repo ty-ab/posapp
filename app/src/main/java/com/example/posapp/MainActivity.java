@@ -19,7 +19,7 @@ import android.widget.ListView;
 
 
 import com.example.posapp.databinding.ActivityMainBinding;
-import com.example.posapp.utility.MyPagerAdapter;
+import com.example.posapp.adapters.MyPagerAdapter;
 import com.example.posapp.views.RegFragment;
 import com.example.posapp.views.SaleFragment;
 import com.example.posapp.views.SaleSummaryFragment;
