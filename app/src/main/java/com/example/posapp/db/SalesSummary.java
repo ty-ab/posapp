@@ -27,7 +27,6 @@ public class SalesSummary{
 
 
 
-
     @ColumnInfo(name = "total_cost")
     double tCost;
     @Ignore

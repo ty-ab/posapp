@@ -238,12 +238,12 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="10dp"
         android:background="@drawable/myrect"
         android:orientation="horizontal"
-        android:layout_marginVertical="10dp"
-        android:layout_marginHorizontal="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/paidsaleid"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_max="200dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout">
 
@@ -251,28 +251,36 @@
             android:id="@+id/recycler_view_cards"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scrollbars="vertical"/>
+            android:scrollbars="vertical" />
     </LinearLayout>
 
 
-    <Button
-        android:id="@+id/resetsaleid"
+    <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:layout_marginHorizontal="5dp"
-        android:text="reset"
+        android:layout_marginHorizontal="2dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-   />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <Button
-        android:id="@+id/paidsaleid"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginTop="10dp"
-        android:text="paid"
-        app:layout_constraintBottom_toTopOf="@+id/resetsaleid"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:layout_editor_absoluteX="5dp" />
+        <Button
+            android:id="@+id/resetsaleid"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="35"
+            android:text="reset" />
+
+        <Button
+            android:id="@+id/paidsaleid"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="35"
+            android:text="paid" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
