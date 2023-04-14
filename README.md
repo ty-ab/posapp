@@ -15,3 +15,6 @@
   - targetSdk 33
   - versionCode 1
   - versionName "1.0"
+
+### To try out the [apk-release](https://drive.google.com/file/d/1pd099dVuDn0x03MxDInqsSVCfVHPxPFB/view?usp=share_link)
+  
