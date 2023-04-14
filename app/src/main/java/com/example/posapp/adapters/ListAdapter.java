@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.posapp.R;
 import com.example.posapp.db.SalesSummary;
+import com.example.posapp.utility.Utility;
 
 import java.util.List;
 
@@ -56,10 +57,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
         SalesSummary currentItem = salesSummaries.get(position);
 
         holder.transactionTextView.setText(String.format("Transaction: %s", currentItem.getTransactionDate().toString()));
-        holder.totalTextView.setText(String.format("Total Cost: %s", currentItem.gettCost()));
-        holder.taxTextView.setText(String.format("TAX(15%%): %s", currentItem.getTax()));
-        holder.quantityTextView.setText(String.format("Quantity :%s", currentItem.getTotal()));
-        holder.paidTextView.setText(String.format("Paid: %s", currentItem.getPayable()));
+        holder.totalTextView.setText(String.format("Total Cost: %s", Utility.roundNumbers(currentItem.gettCost())));
+        holder.taxTextView.setText(String.format("TAX(15%%): %s",Utility.roundNumbers( currentItem.getTax())));
+        holder.quantityTextView.setText(String.format("Quantity :%s", Utility.roundNumbers(currentItem.getTotal())));
+        holder.paidTextView.setText(String.format("Paid: %s", Utility.roundNumbers(currentItem.getPayable())));
     }
 
 

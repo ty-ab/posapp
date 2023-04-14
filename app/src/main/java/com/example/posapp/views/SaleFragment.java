@@ -149,9 +149,9 @@ public class SaleFragment extends Fragment {
                 salesSummary.upTax(cost * 0.15d);
                 salesSummary.setPayable(salesSummary.gettCost() + salesSummary.getTax());
 
-                totalSaleTextEdit.setText(String.format("%s", salesSummary.gettCost()));
-                taxSale.setText(String.format("%s", salesSummary.getTax()));
-                payableSaleTextEdit.setText(String.format("%s", salesSummary.getPayable()));
+                totalSaleTextEdit.setText(String.format("%s", Utility.roundNumbers(salesSummary.gettCost())));
+                taxSale.setText(String.format("%s", Utility.roundNumbers(salesSummary.getTax())));
+                payableSaleTextEdit.setText(String.format("%s",Utility.roundNumbers(salesSummary.getPayable())));
 //                    Completable completable = db.regItemDao().updateItems(cardList);
 //                    completable.subscribeOn(Schedulers.io())
 //                            .observeOn(AndroidSchedulers.mainThread())

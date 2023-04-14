@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import com.google.android.material.textfield.TextInputEditText;
 
 
+import java.text.DecimalFormat;
 import java.util.Objects;
 
 public class Utility {
@@ -36,5 +37,10 @@ public class Utility {
 
     public static void makeToast(Context context,String msg) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+    }
+
+    public static double roundNumbers (double num) {
+        DecimalFormat df = new DecimalFormat("#.##");
+        return Double.parseDouble(df.format(num));
     }
 }
