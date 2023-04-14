@@ -111,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
 //            } else {
 //
 //            }
+            drawerList.setItemChecked(position, true);
+//            selectItem(position);
             viewPager.setCurrentItem(position);
             //drawerLayout.closeDrawer(drawerList);
 
@@ -126,16 +128,17 @@ public class MainActivity extends AppCompatActivity {
         } else {
             fragment = null;
         }
+        switch (position) {}
 
         // Insert the fragment by replacing any existing fragment
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.viewPager, fragment)
-                .commit();
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//        fragmentManager.beginTransaction()
+//                .replace(R.id.viewPager, fragment)
+//                .commit();
 
         // Highlight the selected item, update the title, and close the drawer
         drawerList.setItemChecked(position, true);
-        setTitle("Fragment " + (position + 1));
+        //setTitle("Fragment " + (position + 1));
         drawerLayout.closeDrawer(drawerList);
     }
 
