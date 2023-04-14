@@ -149,7 +149,7 @@ public class SaleFragment extends Fragment {
                 salesSummary.upTax(cost * 0.15d);
                 salesSummary.setPayable(salesSummary.gettCost() + salesSummary.getTax());
 
-                totalSaleTextEdit.setText(String.format("%s", salesSummary.getTotal()));
+                totalSaleTextEdit.setText(String.format("%s", salesSummary.gettCost()));
                 taxSale.setText(String.format("%s", salesSummary.getTax()));
                 payableSaleTextEdit.setText(String.format("%s", salesSummary.getPayable()));
 //                    Completable completable = db.regItemDao().updateItems(cardList);
