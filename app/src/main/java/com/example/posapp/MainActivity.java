@@ -56,11 +56,8 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new SaleFragment(), "Sale");
         adapter.addFragment(new SaleSummaryFragment(), "Sale Summary");
 
-        //drawerList.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, new String[]{"REGISTER ITEM", "SALE"}));
-// Create an array of strings to use as the drawer items
         String[] drawerItems = {"REGISTER ITEM", "SALE", "SALE SUMMARY"};
 
-// Set the adapter for the drawer list
         drawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.listlayout, R.id.text_view_id, drawerItems) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
@@ -105,42 +102,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         drawerList.setOnItemClickListener((parent, view, position, id) -> {
-//            if (position == 2) {
-//                selectItem(position);
-//                //drawerLayout.closeDrawer(drawerList);
-//            } else {
-//
-//            }
             drawerList.setItemChecked(position, true);
-//            selectItem(position);
             viewPager.setCurrentItem(position);
-            //drawerLayout.closeDrawer(drawerList);
-
-            Log.d("TAYIE","POSITION: "+position);
         });
     }
 
-    private void selectItem(int position) {
-        // Create a new fragment and specify the fragment to show based on position
-        Fragment fragment;
-        if (position == 2) {
-            fragment = new SaleSummaryFragment();
-        } else {
-            fragment = null;
-        }
-        switch (position) {}
-
-        // Insert the fragment by replacing any existing fragment
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//        fragmentManager.beginTransaction()
-//                .replace(R.id.viewPager, fragment)
-//                .commit();
-
-        // Highlight the selected item, update the title, and close the drawer
-        drawerList.setItemChecked(position, true);
-        //setTitle("Fragment " + (position + 1));
-        drawerLayout.closeDrawer(drawerList);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -165,14 +131,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        // Sync the toggle state after onRestoreInstanceState has occurred.
         drawerToggle.syncState();
     }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        // Pass any configuration change to the drawer toggls
         drawerToggle.onConfigurationChanged(newConfig);
     }
 
