@@ -56,7 +56,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
         SalesSummary currentItem = salesSummaries.get(position);
 
         holder.transactionTextView.setText(String.format("Transaction: %s", currentItem.getTransactionDate().toString()));
-        holder.totalTextView.setText(String.format("total: %s", currentItem.getTotal()));
+        holder.totalTextView.setText(String.format("Total Cost: %s", currentItem.gettCost()));
         holder.taxTextView.setText(String.format("TAX(15%%): %s", currentItem.getTax()));
         holder.quantityTextView.setText(String.format("Quantity :%s", currentItem.getTotal()));
         holder.paidTextView.setText(String.format("Paid: %s", currentItem.getPayable()));
