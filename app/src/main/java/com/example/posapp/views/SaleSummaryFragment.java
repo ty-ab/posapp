@@ -19,6 +19,8 @@ import com.example.posapp.db.SalesSummaryDao;
 import com.example.posapp.utility.Utility;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -50,6 +52,8 @@ public class SaleSummaryFragment extends Fragment {
         AppDatabase db1 = Room.databaseBuilder(this.getContext(),
                 AppDatabase.class, "sales_summary").build();
         AtomicReference<List<SalesSummary>> summaryAtomicReference = new AtomicReference<>(new ArrayList<>());
+
+
 
         refreshBtn.setOnClickListener(v -> {
             SalesSummaryDao summaryDao = db1.salesSummaryDao();

@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey;
 import java.util.Date;
 
 @Entity(tableName = "sales_summary")
-public class SalesSummary {
+public class SalesSummary{
 
     @NonNull
     @PrimaryKey

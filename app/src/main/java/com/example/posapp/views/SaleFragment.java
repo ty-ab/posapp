@@ -88,7 +88,6 @@ public class SaleFragment extends Fragment {
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
 
-
         AppDatabase db = Room.databaseBuilder(this.getContext(),
                 AppDatabase.class, "registered").build();
 
