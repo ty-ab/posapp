@@ -104,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
         drawerList.setOnItemClickListener((parent, view, position, id) -> {
             drawerList.setItemChecked(position, true);
             viewPager.setCurrentItem(position);
+            drawerLayout.closeDrawer(drawerList);
         });
     }
 
