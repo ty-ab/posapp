@@ -39,28 +39,4 @@ public class MyPagerAdapter extends FragmentStatePagerAdapter {
         return mFragmentTitles.get(position);
     }
 
-//    @Override
-//    public int getCount() {
-//        return 3; // Return the number of tabs
-//    }
-
-//    @NonNull
-//    @Override
-//    public Fragment getItem(int position) {
-//        switch (position) {
-//            case 0:
-//                return new RegFragment();
-//            case 1:
-//                return new SaleFragment();
-//            case 2:
-//                return new SaleSummaryFragment();
-//            default:
-//                return null;
-//        }
-//    }
-
-//    @Override
-//    public CharSequence getPageTitle(int position) {
-//        return tabTitles[position];
-//    }
 }
