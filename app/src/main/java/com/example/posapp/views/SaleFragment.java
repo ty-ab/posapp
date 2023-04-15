@@ -65,7 +65,6 @@ public class SaleFragment extends Fragment {
         codeSaleTextEdit = salesUiBinding.codesalegid;
         quantitySaleTextEdit = salesUiBinding.quantitysaleid;
 
-        //reault
         totalSaleTextEdit = salesUiBinding.totalsaleid;
         totalSaleTextEdit.setFocusable(false);
 
@@ -108,18 +107,15 @@ public class SaleFragment extends Fragment {
                 // Create an Observable that emits the list of users from the database
                 @NonNull Observable<RegisterItem> observable = db.regItemDao().getByCode(code).toObservable();
 
-// Subscribe to the Observable to receive the list of users
                 observable.subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(item -> {
-                            // Handle the list of users
                             registerItem.set(item);
                             regItemTextView.setText("item: "+item._item);
                             itemUnitTextView.setText("unit: "+item.unit);
                             itemUnitPrice.setText("unit price: "+item.unit_price);
                             Utility.clear(codeSaleTextEdit);
                         }, throwable -> {
-                            // Handle the error
                             Toast.makeText(this.getContext(), "no result", Toast.LENGTH_SHORT).show();
                         });
             } else {
@@ -152,17 +148,6 @@ public class SaleFragment extends Fragment {
                 totalSaleTextEdit.setText(String.format("%s", Utility.roundNumbers(salesSummary.gettCost())));
                 taxSale.setText(String.format("%s", Utility.roundNumbers(salesSummary.getTax())));
                 payableSaleTextEdit.setText(String.format("%s",Utility.roundNumbers(salesSummary.getPayable())));
-//                    Completable completable = db.regItemDao().updateItems(cardList);
-//                    completable.subscribeOn(Schedulers.io())
-//                            .observeOn(AndroidSchedulers.mainThread())
-//                            .subscribe(()->{
-//                                Toast.makeText(this.getContext(), "saved", Toast.LENGTH_SHORT).show();
-//                            }, throwable -> {
-//                                Toast.makeText(this.getContext(), "failed to save", Toast.LENGTH_SHORT).show();
-//                            });
-                //Utility.calc(regCardList);
-//                total[0].addAndGet(quantity);
-//                tax[0] += tax[0];
 
             } else {
                 Utility.makeToast(this.getContext(),"invalid input");
