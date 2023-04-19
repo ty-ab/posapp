@@ -4,7 +4,7 @@
 
 - ## Group 7 Members
   - Hanna Tilahun--------------0221/12
-  - Taye Brhanu-----------------0963/12  
+  - Taye Birhanu-----------------0963/12  
   - Mikiyas Yeshitla------------1810/12  
   - Aron Tadesse----------------1369/12               
   - Abera Assefa-----------------1697/12
