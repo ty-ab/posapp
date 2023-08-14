@@ -2,14 +2,6 @@
 ## Assessment 3: App Development Project – 3
 ### Course: CoSc4083 – Mobile Application Development
 
-- ## Group 7 Members
-  - Hanna Tilahun--------------0221/12
-  - Taye Birhanu-----------------0963/12  
-  - Mikiyas Yeshitla------------1810/12  
-  - Aron Tadesse----------------1369/12               
-  - Abera Assefa-----------------1697/12
-
-
 ### about the app
   - minSdk 28
   - targetSdk 33
@@ -18,3 +10,4 @@
 
 ### To try out the [apk-release](https://drive.google.com/file/d/1pd099dVuDn0x03MxDInqsSVCfVHPxPFB/view?usp=share_link)
   
+POS (point of sale) app is a software application that allows businesses to process transactions and manage sales data from a mobile device or tablet. 
